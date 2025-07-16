@@ -1,0 +1,23 @@
+create database LibraryDB;
+use LibraryDB;
+create table Books2( BookID int, Title varchar(50), Author varchar(20), Genre varchar(20), Price varchar(20), PublishDate varchar(20), AvailableCopies int, PublisherID int, ISBN varchar(20));
+insert into Books2 (BookID,Title,Author,Genre,Price,PublishDate,AvailableCopies,PublisherID,ISBN)values
+(1,"To Kill a Mockingbird","Harper Lee","Fiction","15.99","1960-07-11",5,101,"978-0-06-112008-4"),
+(2,"1984","George Orwell","Dystopian","12.99","1949-06-08",3,102,"978-0-452-28423-4"),
+(3,"The Great Gatsby","F.Scott Fitzgerald","Fiction","10.99","1925-04-10",2,103,"978-0-7432-7356-5"),
+(4,"Moby Dick","Herman Melville","Adventure","17.99","1851-10-18",4,101,"978-0-14-243724-7"),
+(5,"Pride and Prejudice","Jane Austen","Rom ance","14.99","1813-01-28",6,104,"978-0-14-143941-8");
+select * from Books2;
+select BookID,Title,Author from Books2;
+select * from Books2 where Price >15;
+select * from Books2 where PublishDate < "1950-01-01";
+select Title, AvailableCopies from Books2 where Genre = "Fiction";
+select * from Books2 where PublisherID is null;
+select BookID, Title from Books2 where PublisherID is not null;
+select distinct Genre from Books2;
+select * from Books2 where Price between 10 and 20;
+select Title,Price from Books2 where Title like "%The%";
+select * from Books2 where ISBN is not null;
+select * from Books2 order by Price ASC;
+select * from Books2 where AvailableCopies <4;
+select 
